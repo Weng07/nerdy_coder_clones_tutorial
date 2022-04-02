@@ -4,13 +4,13 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
-import i1 from "./assets/images/1.png";
+import i1 from "./assets/images/move.gif";
 
 export const StyledButton = styled.button`
   padding: 10px;
   border-radius: 50px;
   border: none;
-  background-color: #ffffff;
+  background-color: #fd0000;
   padding: 10px;
   font-weight: bold;
   color: #000000;
@@ -98,9 +98,9 @@ function App() {
     <s.Screen style={{ backgroundColor: "var(--black)" }}>
       <s.Container flex={1} ai={"center"} style={{ padding: 24 }}>
         <s.TextTitle
-          style={{ textAlign: "center", fontSize: 28, fontWeight: "bold" }}
+          style={{ textAlign: "center", color: "#fd0000", fontSize: 28, fontWeight: "bold" }}
         >
-          Mint a Nerdy Coder Clone
+          Mint Your Creepy Thumb Now
         </s.TextTitle>
         <s.SpacerMedium />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }}>
@@ -108,9 +108,9 @@ function App() {
             <StyledImg alt={"example"} src={i1} />
             <s.SpacerMedium />
             <s.TextTitle
-              style={{ textAlign: "center", fontSize: 35, fontWeight: "bold" }}
+              style={{ textAlign: "center", color: "#fd0000", fontSize: 35, fontWeight: "bold" }}
             >
-              {data.totalSupply}/1000
+              {data.totalSupply}/7000
             </s.TextTitle>
           </s.Container>
           <s.SpacerMedium />
@@ -120,15 +120,15 @@ function App() {
             ai={"center"}
             style={{ backgroundColor: "#383838", padding: 24 }}
           >
-            {Number(data.totalSupply) == 1000 ? (
+            {Number(data.totalSupply) == 7000 ? (
               <>
-                <s.TextTitle style={{ textAlign: "center" }}>
+                <s.TextTitle style={{ textAlign: "center", color: "#fd0000" }}>
                   The sale has ended.
                 </s.TextTitle>
                 <s.SpacerSmall />
-                <s.TextDescription style={{ textAlign: "center" }}>
-                  You can still find Nerdy Coder Clones on{" "}
-                  <a
+                <s.TextDescription style={{ textAlign: "center", color: "red" }}>
+                  You can still find CreeptoThumbs on{" "}
+                  <a style={{ textAlign: "center", color: "white" }}
                     target={"_blank"}
                     href={"https://opensea.io/collection/nerdy-coder-clones"}
                   >
@@ -138,22 +138,22 @@ function App() {
               </>
             ) : (
               <>
-                <s.TextTitle style={{ textAlign: "center" }}>
-                  1 NCC costs 100 MATIC.
+                <s.TextTitle style={{ textAlign: "center", font: "20", color: "#fd0000" }}>
+                  1 CPT costs 2 MATIC.
                 </s.TextTitle>
                 <s.SpacerXSmall />
-                <s.TextDescription style={{ textAlign: "center" }}>
+                <s.TextDescription style={{ textAlign: "center", color: "#fd0000" }}>
                   Excluding gas fee.
                 </s.TextDescription>
                 <s.SpacerSmall />
-                <s.TextDescription style={{ textAlign: "center" }}>
+                <s.TextDescription style={{ textAlign: "center", font: "20", color: "#fd0000" }}>
                   {feedback}
                 </s.TextDescription>
                 <s.SpacerMedium />
                 {blockchain.account === "" ||
                 blockchain.smartContract === null ? (
                   <s.Container ai={"center"} jc={"center"}>
-                    <s.TextDescription style={{ textAlign: "center" }}>
+                    <s.TextDescription style={{ textAlign: "center", color: "#fd0000" }}>
                       Connect to the Polygon network
                     </s.TextDescription>
                     <s.SpacerSmall />
@@ -195,16 +195,16 @@ function App() {
         </ResponsiveWrapper>
         <s.SpacerSmall />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-          <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
+          <s.TextDescription style={{ textAlign: "center", color: "#fd0000", fontSize: 12 }}>
             Please make sure you are connected to the right network (Polygon
             Mainnet) and the correct address. Please note: Once you make the
             purchase, you cannot undo this action.
           </s.TextDescription>
           <s.SpacerSmall />
-          <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
+          {/* <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
             We have set the gas limit to 285000 for the contract to successfully
             mint your NFT. We recommend that you don't change the gas limit.
-          </s.TextDescription>
+          </s.TextDescription> */}
         </s.Container>
       </s.Container>
     </s.Screen>
